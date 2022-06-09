@@ -1,0 +1,408 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+.personalArea {
+	.pivotContent {
+		display: flex;
+	}
+
+	.container {
+		width: 100%;
+		padding-right: var(--bs-gutter-x, 0.75rem);
+		padding-left: var(--bs-gutter-x, 0.75rem);
+		margin-right: auto;
+		margin-left: auto;
+		font-family: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto,
+			'Helvetica Neue', sans-serif;
+		font-size: 1rem;
+		font-weight: 400;
+	}
+
+	.profileWrapper {
+		width: 100%;
+	}
+
+	.tabContentWrapper {
+		max-height: 750px;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-content: space-between;
+		padding-top: 1rem;
+		background-color: #fff;
+	}
+
+	.breakColumn {
+		flex-basis: 100%;
+		width: 0;
+	}
+
+	.topHeader {
+		padding-bottom: 0.5rem;
+	}
+
+	.header {
+		font-size: 2rem;
+		margin: 0;
+	}
+
+	.nav {
+		display: flex;
+		flex-wrap: wrap;
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+	}
+
+	.navLink {
+		display: block;
+		padding: 0.5rem 1rem;
+		color: #fcd33c;
+		text-decoration: none;
+		transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+	}
+
+	.navTabs {
+		border-bottom: 1px solid #ccc;
+	}
+
+	.navTabs .navLink {
+		margin-bottom: -1px;
+		background: none;
+		border: 1px solid transparent;
+		border-top-left-radius: 0.25rem;
+		border-top-right-radius: 0.25rem;
+	}
+
+	.navTabs .navLink.active,
+	.navTabs .navItem.show .navLink {
+		color: #444;
+		background-color: #fcfcfc;
+		border-color: #ccc #ccc #fcfcfc;
+	}
+
+	.tabContent > .active {
+		display: block;
+		// border-right: 1px solid #ccc;
+		// border-bottom: 1px solid #ccc;
+		// border-left: 1px solid #ccc;
+		margin-bottom: 80px;
+	}
+
+	//////////////// Info Tab ////////////////
+	// General Info Section
+
+	.generalInfo,
+	.details,
+	.links,
+	.hr {
+		width: 48%;
+	}
+
+	.card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+		word-wrap: break-word;
+		background-color: #fff;
+		background-clip: border-box;
+		border: 1px solid #eeeeee;
+		border-radius: 0.25rem;
+		margin-bottom: 1rem;
+		border-color: #fcd33c;
+	}
+
+	.cardBlue {
+		border-color: #029acf;
+	}
+
+	.cardHeader:first-child {
+		border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+	}
+
+	.cardHeader {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 0.5rem 1rem;
+		margin-bottom: 0;
+		background-color: rgba(0, 0, 0, 0.03);
+		border-bottom: 1px solid #eeeeee;
+	}
+
+	.headerIcon {
+		margin-right: 10px;
+		font-weight: 600;
+		font-size: 1.3rem;
+	}
+
+	.name {
+		font-weight: 600;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.name .link i {
+		display: inline-block;
+		font-size: 1.3rem;
+		font-weight: 500;
+		color: #d9230f;
+	}
+
+	.link {
+		display: flex;
+		cursor: pointer;
+		text-decoration: none;
+		// margin-left: 10px;
+	}
+
+	.cardBody {
+		flex: 1 1 auto;
+		padding: 1rem 1rem;
+	}
+
+	.photo {
+		display: block;
+		opacity: 1;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		box-sizing: content-box;
+	}
+
+	.image {
+		perspective: 1px;
+		overflow: hidden;
+		border-width: 0px;
+		border-style: initial;
+		border-color: initial;
+		border-image: initial;
+		border-radius: 50%;
+		width: 150px;
+		height: 150px;
+		margin: 3px;
+	}
+
+	.flexRow {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	.photo {
+		min-width: 150px;
+		height: 150px;
+		display: flex;
+		justify-content: center;
+		border-radius: 50%;
+		// background: url(Митрошина Юлия Владимировна.jpg) 0% 0% / cover;
+	}
+
+	.notifications {
+		position: relative;
+	}
+
+	.notificationsRow {
+		display: flex;
+		flex-direction: row;
+		padding-bottom: 10px;
+		color: #d9230f;
+		font-size: 0.9rem;
+	}
+
+	.notificationsRow i {
+		margin-right: 5px;
+	}
+
+	.dropdownContent {
+		visibility: hidden;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		background-color: #fff;
+		min-width: 200px;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		z-index: 1;
+		color: #3c3c3c;
+		right: -1rem;
+	}
+
+	.dropdownContent a {
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		color: #3c3c3c;
+	}
+
+	.dropdownContent a:hover {
+		background-color: #f1f1f1;
+		color: #007bff;
+	}
+
+	.notifications:hover .dropdownContent {
+		visibility: visible;
+	}
+
+	.notifications:hover {
+		cursor: pointer;
+	}
+
+	// Details Section
+
+	.detailsList {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	.detailsItem {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-bottom: 10px;
+	}
+
+	#currentJobFrom .detailsItem {
+		margin-bottom: 0;
+	}
+
+	.detailsItemTitle {
+		font-size: 0.8rem;
+		color: #777;
+		margin-bottom: 3px;
+	}
+
+	.detailsItemValue {
+		color: #3c3c3c;
+		font-weight: 400;
+		font-size: 1rem;
+	}
+
+	.fade {
+		transition: opacity 0.15s linear;
+	}
+
+	.round {
+		border-radius: 3px;
+	}
+
+	// Links Section
+
+	.btn {
+		display: flex;
+		align-items: center;
+		min-width: 250px;
+		width: 100%;
+		font-weight: 400;
+		line-height: 1.5;
+		color: #212529;
+		text-decoration: none;
+		cursor: pointer;
+		background-color: transparent;
+		border: 1px solid transparent;
+		padding: 0.375rem 0.75rem;
+		font-size: 1rem;
+		border-radius: 0.25rem;
+		transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+			box-shadow 0.15s ease-in-out;
+		margin-bottom: 5px;
+	}
+
+	.btnDark {
+		color: #373a3c;
+		border-color: #373a3c;
+	}
+
+	.btnDark:hover {
+		color: #fff;
+		background-color: #373a3c;
+		border-color: #373a3c;
+	}
+
+	.btnPurple {
+		color: #9b479f;
+		border-color: #9b479f;
+	}
+
+	.btnPurple:hover {
+		color: #fff;
+		background-color: #9b479f;
+		border-color: #9b479f;
+	}
+
+	.btnLightBlue {
+		color: #0068b8;
+		border-color: #0068b8;
+	}
+
+	.btnLightBlue:hover {
+		color: #0068b8;
+		background-color: #d4e7f6;
+		border-color: #0068b8;
+	}
+
+	.btnLightGreen {
+		color: #437406;
+		border-color: #437406;
+	}
+
+	.btnLightGreen:hover {
+		color: #437406;
+		background-color: #caf0cc;
+		border-color: #437406;
+	}
+
+	.btnIcon {
+		margin-right: 10px;
+		font-weight: 500;
+		font-size: 1.2rem;
+	}
+
+	.link {
+		text-decoration: none !important;
+	}
+
+	//////////////// Vacations Tab ////////////////
+
+	.vacationsInfo {
+		max-height: 750px;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-content: space-between;
+		padding-top: 1rem;
+		background-color: #fff;
+	}
+
+	.vacationDays {
+		display: flex;
+	}
+
+	.vacationBtn {
+		display: flex;
+	}
+
+	.vacationBtn .link {
+		margin-left: 0;
+	}
+
+	.usefulButtons {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	/////////////////////////////
+	.w100 {
+		width: 100%;
+	}
+}
