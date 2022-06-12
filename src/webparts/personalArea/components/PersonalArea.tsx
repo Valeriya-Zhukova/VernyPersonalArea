@@ -85,7 +85,7 @@ export default class PersonalArea extends React.Component<IPersonalAreaProps, IP
 				email: '',
 			},
 			vacation: {
-				vacationDays: 0,
+				// vacationDays: 0,
 				title: '',
 				list: [],
 			},
@@ -119,261 +119,283 @@ export default class PersonalArea extends React.Component<IPersonalAreaProps, IP
 							<PivotItem headerText='Инфо'>
 								<div className={`${styles.tabContent}`}>
 									<div className={`${styles.tabContentWrapper}`}>
-										<section className={`${styles.generalInfo} ${styles.round}`}>
-											<div className={`${styles.card}`}>
-												<div className={`${styles.cardHeader}`}>
-													<div className={`${styles.name}`}>
-														<span>{this.state.personalInfo.Title}</span>
+										<div className={`${styles.left}`}>
+											<section className={`${styles.generalInfo} ${styles.round}`}>
+												<div className={`${styles.card}`}>
+													<div className={`${styles.cardHeader}`}>
+														<div className={`${styles.name}`}>
+															<span>{this.state.personalInfo.Title}</span>
+														</div>
 													</div>
-												</div>
-												<div className={`${styles.cardBody}`}>
-													<div className={`${styles.flexRow}`}>
-														<div className={`${styles.image}`}>
-															<img
-																className={`${styles.photo}`}
-																// src={`/_vti_bin/DelveApi.ashx/people/profileimage?size=L&amp;userId=${this.state.login.userName}`}
-																src={`/_layouts/15/userphoto.aspx?size=L&username=${this.props.login}`}
-															/>
+													<div className={`${styles.cardBody}`}>
+														<div className={`${styles.flexRow}`}>
+															<div className={`${styles.image}`}>
+																<img
+																	className={`${styles.photo}`}
+																	// src={`/_vti_bin/DelveApi.ashx/people/profileimage?size=L&amp;userId=${this.state.login.userName}`}
+																	src={`/_layouts/15/userphoto.aspx?size=L&username=${this.props.login}`}
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-										</section>
-										<section className={`${styles.details} ${styles.round}`}>
-											<div className={`${styles.card}`}>
-												<div className={`${styles.cardHeader}`}>
-													<i className="${getIconclassName('Info')} ${styles.headerIcon}"></i>Личная информация
-												</div>
-												<div className={`${styles.cardBody}`}>
-													<ul className={`${styles.detailsList}`}>
-														<li id='job'>
-															<div className={`${styles.detailsItem}`}>
-																<div className={`${styles.detailsItemTitle}`}>Должность</div>
-																<div className={`${styles.detailsItemValue}`}>{this.state.personalInfo.post}</div>
-															</div>
-														</li>
-														<li id='department'>
-															<div className={`${styles.detailsItem}`}>
-																<div className={`${styles.detailsItemTitle}`}>Департамент</div>
-																<div className={`${styles.detailsItemValue}`}>{this.state.personalInfo.division}</div>
-															</div>
-														</li>
-														<li id='internalNumber'>
-															<div className={`${styles.detailsItem}`}>
-																<div className={`${styles.detailsItemTitle}`}>Внутренний номер</div>
-																<div className={`${styles.detailsItemValue}`}>{this.state.personalInfo.Phone}</div>
-															</div>
-														</li>
-														<li id='phoneNumber'>
-															<div className={`${styles.detailsItem}`}>
-																<div className={`${styles.detailsItemTitle}`}>Номер телефона</div>
-																<div className={`${styles.detailsItemValue}`}>{this.state.personalInfo.Mobile}</div>
-															</div>
-														</li>
-														<li id='email'>
-															<div className={`${styles.detailsItem}`}>
-																<div className={`${styles.detailsItemTitle}`}>Email</div>
-																<div className={`${styles.detailsItem}value`}>{this.state.personalInfo.email}</div>
-															</div>
-														</li>
-														<li id='worksFrom'>
-															<div className={`${styles.detailsItem}`}>
-																<div className={`${styles.detailsItemTitle}`}>Работает в ТОО Verny Capital c</div>
-																<div className={`${styles.detailsItemValue}`}>{this.state.personalInfo.acceptd}</div>
-															</div>
-														</li>
-														<li id='currentJobFrom'>
-															<div className={`${styles.detailsItem}`}>
-																<div className={`${styles.detailsItemTitle}`}>Дней отпуска</div>
-																<div className={`${styles.detailsItemValue}`}>{this.state.personalInfo.vacation}</div>
-															</div>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</section>
-										<section className={`${styles.breakColumn}`}></section>
-										<section className={`${styles.links}`}>
-											<div className={`${styles.card} ${styles.cardBlue}`}>
-												<div className={`${styles.cardHeader}`}>
-													<i className="${getIconClassName('Link')} ${styles.headerIcon}"></i>
-													Полезные ссылки
-												</div>
-												<div className={`${styles.cardBody}`}>
-													<a
-														href='https://vernycapital.sharepoint.com/howto/Shared%20Documents/Forms/AllItems.aspx?viewid=a8fac01f%2D5f1b%2D4789%2Db2e9%2Dd6daf52fbbed'
-														target='_blank'
-														className={`${styles.link}`}
-													>
-														<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
-															<Icon iconName='PageList' className={`${styles.btnIcon}`}></Icon>
-															Должностная Инструкция
-														</button>
-													</a>
-													<a
-														href='https://vernycapital.sharepoint.com/howto/Shared%20Documents/Forms/AllItems.aspx?viewid=a8fac01f%2D5f1b%2D4789%2Db2e9%2Dd6daf52fbbed'
-														target='_blank'
-														className={`${styles.link}`}
-													>
-														<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
-															<Icon iconName='ChangeEntitlements' className={`${styles.btnIcon}`}></Icon>
-															Центр Инструкций
-														</button>
-													</a>
-												</div>
-											</div>
-										</section>
+											</section>
 
-										<section className={`${styles.hr}`}>
-											<div className={`${styles.card} ${styles.cardBlue}`}>
-												<div className={`${styles.cardHeader}`}>
-													<Icon iconName='Processing' className={`${styles.btnIcon}`}></Icon>
-													Системное управление сервисами
+											<section className={`${styles.details} ${styles.round}`}>
+												<div className={`${styles.card}`}>
+													<div className={`${styles.cardHeader}`}>
+														<i className="${getIconclassName('Info')} ${styles.headerIcon}"></i>Личная информация
+													</div>
+													<div className={`${styles.cardBody}`}>
+														<ul className={`${styles.detailsList}`}>
+															<li id='job'>
+																<div className={`${styles.detailsItem}`}>
+																	<div className={`${styles.detailsItemTitle}`}>Должность</div>
+																	<div className={`${styles.detailsItemValue}`}>{this.state.personalInfo.post}</div>
+																</div>
+															</li>
+															<li id='department'>
+																<div className={`${styles.detailsItem}`}>
+																	<div className={`${styles.detailsItemTitle}`}>Департамент</div>
+																	<div className={`${styles.detailsItemValue}`}>{this.state.personalInfo.division}</div>
+																</div>
+															</li>
+															<li id='internalNumber'>
+																<div className={`${styles.detailsItem}`}>
+																	<div className={`${styles.detailsItemTitle}`}>Внутренний номер</div>
+																	<div className={`${styles.detailsItemValue}`}>{this.state.personalInfo.Phone}</div>
+																</div>
+															</li>
+															<li id='phoneNumber'>
+																<div className={`${styles.detailsItem}`}>
+																	<div className={`${styles.detailsItemTitle}`}>Номер телефона</div>
+																	<div className={`${styles.detailsItemValue}`}>{this.state.personalInfo.Mobile}</div>
+																</div>
+															</li>
+															<li id='email'>
+																<div className={`${styles.detailsItem}`}>
+																	<div className={`${styles.detailsItemTitle}`}>Email</div>
+																	<div className={`${styles.detailsItem}value`}>{this.state.personalInfo.email}</div>
+																</div>
+															</li>
+															<li id='worksFrom'>
+																<div className={`${styles.detailsItem}`}>
+																	<div className={`${styles.detailsItemTitle}`}>Работает в ТОО Verny Capital c</div>
+																	<div className={`${styles.detailsItemValue}`}>{this.state.personalInfo.acceptd}</div>
+																</div>
+															</li>
+															<li id='currentJobFrom'>
+																<div className={`${styles.detailsItem}`}>
+																	<div className={`${styles.detailsItemTitle}`}>Дней отпуска</div>
+																	<div className={`${styles.detailsItemValue}`}>{this.state.personalInfo.vacation}</div>
+																</div>
+															</li>
+														</ul>
+													</div>
 												</div>
-												<div className={`${styles.cardBody}`}>
-													<a
-														href='https://bpm.vernycapital.com/itsm/itsm_form?uid=11e9ce85-ad35-47e0-91e8-3750fb1f6296'
-														target='_blank'
-														className={`${styles.link}`}
-													>
-														<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
-															<Icon iconName='PaymentCard' className={`${styles.btnIcon}`}></Icon>
-															<i className="${getIconClassName('PaymentCard')} ${styles.btnIcon}"></i>
-															Заявка на оплату
-														</button>
-													</a>
-													<a href='https://bpm.vernycapital.com' target='_blank' className={`${styles.link}`}>
-														<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
-															<Icon iconName='DocumentReply' className={`${styles.btnIcon}`}></Icon>
-															Согласование документов
-														</button>
-													</a>
-												</div>
-											</div>
-										</section>
+											</section>
+										</div>
 
-										<section className={`${styles.hr}`}>
-											<div className={`${styles.card} ${styles.cardBlue}`}>
-												<div className={`${styles.cardHeader}`}>
-													<Icon iconName='People' className={`${styles.btnIcon}`}></Icon>
-													HR
+										<div className={`${styles.right}`}>
+											<section className={`${styles.links}`}>
+												<div className={`${styles.card} ${styles.cardBlue}`}>
+													<div className={`${styles.cardHeader}`}>
+														<i className="${getIconClassName('Link')} ${styles.headerIcon}"></i>
+														Полезные ссылки
+													</div>
+													<div className={`${styles.cardBody}`}>
+														<a
+															href='https://vernycapital.sharepoint.com/howto/Shared%20Documents/Forms/AllItems.aspx?viewid=a8fac01f%2D5f1b%2D4789%2Db2e9%2Dd6daf52fbbed'
+															target='_blank'
+															className={`${styles.link}`}
+														>
+															<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
+																<Icon iconName='PageList' className={`${styles.btnIcon}`}></Icon>
+																Должностная Инструкция
+															</button>
+														</a>
+														<a
+															href='https://vernycapital.sharepoint.com/howto/Shared%20Documents/Forms/AllItems.aspx?viewid=a8fac01f%2D5f1b%2D4789%2Db2e9%2Dd6daf52fbbed'
+															target='_blank'
+															className={`${styles.link}`}
+														>
+															<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
+																<Icon iconName='ChangeEntitlements' className={`${styles.btnIcon}`}></Icon>
+																Центр Инструкций
+															</button>
+														</a>
+													</div>
 												</div>
-												<div className={`${styles.cardBody}`}>
-													<a href='https://bpm.vernycapital.com' target='_blank' className={`${styles.link}`}>
-														<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
-															<Icon iconName='ClipboardList' className={`${styles.btnIcon}`}></Icon>
-															PAS
-														</button>
-													</a>
+											</section>
+
+											<section className={`${styles.hr}`}>
+												<div className={`${styles.card} ${styles.cardBlue}`}>
+													<div className={`${styles.cardHeader}`}>
+														<Icon iconName='Processing' className={`${styles.btnIcon}`}></Icon>
+														Системное управление сервисами
+													</div>
+													<div className={`${styles.cardBody}`}>
+														<a
+															href='https://bpm.vernycapital.com/itsm/itsm_form?uid=11e9ce85-ad35-47e0-91e8-3750fb1f6296'
+															target='_blank'
+															className={`${styles.link}`}
+														>
+															<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
+																<Icon iconName='PaymentCard' className={`${styles.btnIcon}`}></Icon>
+																<i className="${getIconClassName('PaymentCard')} ${styles.btnIcon}"></i>
+																Заявка на оплату
+															</button>
+														</a>
+														<a href='https://bpm.vernycapital.com' target='_blank' className={`${styles.link}`}>
+															<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
+																<Icon iconName='DocumentReply' className={`${styles.btnIcon}`}></Icon>
+																Согласование документов
+															</button>
+														</a>
+													</div>
 												</div>
-											</div>
-										</section>
+											</section>
+
+											<section className={`${styles.hr}`}>
+												<div className={`${styles.card} ${styles.cardBlue}`}>
+													<div className={`${styles.cardHeader}`}>
+														<Icon iconName='People' className={`${styles.btnIcon}`}></Icon>
+														HR
+													</div>
+													<div className={`${styles.cardBody}`}>
+														<a href='https://bpm.vernycapital.com' target='_blank' className={`${styles.link}`}>
+															<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
+																<Icon iconName='ClipboardList' className={`${styles.btnIcon}`}></Icon>
+																PAS
+															</button>
+														</a>
+													</div>
+												</div>
+											</section>
+										</div>
 									</div>
 								</div>
 							</PivotItem>
 							<PivotItem headerText='Отпуска'>
 								<div className={`${styles.tabContent}`}>
-									<div className={`${styles.tabContentWrapper}`} style={{ maxHeight: '600px' }}>
-										<section className={`${styles.generalInfo} ${styles.round}`}>
-											<div className={`${styles.card}`}>
-												<div className={`${styles.cardHeader}`}>
-													<div className={`${styles.name}`}>
-														<span>Дней отпуска с начала года: {this.state.vacation.vacationDays}</span>
+									<div className={`${styles.tabContentWrapper}`}>
+										<div className={`${styles.left}`}>
+											<section className={`${styles.generalInfo} ${styles.round}`}>
+												<div className={`${styles.card}`}>
+													<div className={`${styles.cardHeader}`}>
+														<div className={`${styles.name}`}>
+															<span>Дней отпуска: {this.state.personalInfo.vacation}</span>
+														</div>
+													</div>
+													<div className={`${styles.cardBody}`}>
+														<DetailsList
+															items={this.state.vacation.list}
+															columns={this.state.columns}
+															layoutMode={DetailsListLayoutMode.justified}
+															isHeaderVisible={true}
+															selectionMode={SelectionMode.none}
+															compact={true}
+															styles={_styles}
+														/>
 													</div>
 												</div>
-												<div className={`${styles.cardBody}`}>
-													<DetailsList
-														items={this.state.vacation.list}
-														columns={this.state.columns}
-														layoutMode={DetailsListLayoutMode.justified}
-														isHeaderVisible={true}
-														selectionMode={SelectionMode.none}
-														compact={true}
-														styles={_styles}
-													/>
-												</div>
-											</div>
-										</section>
-										<section className={`${styles.links} ${styles.round}`}>
-											<div className={`${styles.card} ${styles.cardBlue}`}>
-												<div className={`${styles.cardHeader}`}>
-													<div className={`${styles.name}`}>
-														<span>Полезные ссылки</span>
+											</section>
+										</div>
+										<div className={`${styles.right}`}>
+											<section className={`${styles.links} ${styles.round}`}>
+												<div className={`${styles.card} ${styles.cardBlue}`}>
+													<div className={`${styles.cardHeader}`}>
+														<div className={`${styles.name}`}>
+															<span>Полезные ссылки</span>
+														</div>
+													</div>
+													<div className={`${styles.cardBody}`}>
+														<a
+															href={`https://vernycapital.sharepoint.com/Lists/OutOf/AllItems.aspx?FilterField1=login&FilterValue1=${this.props.login}&useFiltersInViewXml=1&FilterField2=Type&FilterValue2=%D0%9E%D1%82%D0%BF%D1%83%D1%81%D0%BA&FilterType2=Choice&FilterOp2=In`}
+															target='_blank'
+															className={`${styles.link}`}
+														>
+															<button type='button' className={`${styles.btn} ${styles.btnLightGreen}`}>
+																<Icon iconName='Vacation' className={`${styles.btnIcon}`}></Icon>
+																Посмотреть список отпусков
+															</button>
+														</a>
+														<a
+															href='https://bpm.vernycapital.com/itsm/itsm_main#catalogue'
+															target='_blank'
+															className={`${styles.link}`}
+														>
+															<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
+																<Icon iconName='ActivateOrders' className={`${styles.btnIcon}`}></Icon>
+																Подать заявку на отпуск
+															</button>
+														</a>
 													</div>
 												</div>
-												<div className={`${styles.cardBody}`}>
-													<a
-														href='https://vernycapital.sharepoint.com/Lists/OutOf/AllItems.aspx'
-														target='_blank'
-														className={`${styles.link}`}
-													>
-														<button type='button' className={`${styles.btn} ${styles.btnLightGreen}`}>
-															<Icon iconName='Vacation' className={`${styles.btnIcon}`}></Icon>
-															Посмотреть список
-														</button>
-													</a>
-													<a href='#' target='_blank' className={`${styles.link}`}>
-														<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
-															<Icon iconName='ActivateOrders' className={`${styles.btnIcon}`}></Icon>
-															Подать заявку
-														</button>
-													</a>
-												</div>
-											</div>
-										</section>
+											</section>
+										</div>
 									</div>
 								</div>
 							</PivotItem>
 							<PivotItem headerText='Командировки'>
 								<div className={`${styles.tabContent}`}>
-									<div className={`${styles.tabContentWrapper}`} style={{ maxHeight: '600px' }}>
-										<section className={`${styles.generalInfo} ${styles.round}`}>
-											<div className={`${styles.card}`}>
-												<div className={`${styles.cardHeader}`}>
-													<div className={`${styles.name}`}>
-														<span>Дней командировок с начала года: {this.state.errand.errandDays}</span>
+									<div className={`${styles.tabContentWrapper}`}>
+										<div className={`${styles.left}`}>
+											<section className={`${styles.generalInfo} ${styles.round}`}>
+												<div className={`${styles.card}`}>
+													<div className={`${styles.cardHeader}`}>
+														<div className={`${styles.name}`}>
+															<span>Командировок с начала года: {this.state.errand.errandDays}</span>
+														</div>
+													</div>
+													<div className={`${styles.cardBody}`}>
+														<DetailsList
+															items={this.state.errand.list}
+															columns={this.state.columns}
+															layoutMode={DetailsListLayoutMode.justified}
+															isHeaderVisible={true}
+															selectionMode={SelectionMode.none}
+															compact={true}
+															styles={_styles}
+														/>
 													</div>
 												</div>
-												<div className={`${styles.cardBody}`}>
-													<DetailsList
-														items={this.state.errand.list}
-														columns={this.state.columns}
-														layoutMode={DetailsListLayoutMode.justified}
-														isHeaderVisible={true}
-														selectionMode={SelectionMode.none}
-														compact={true}
-														styles={_styles}
-													/>
-												</div>
-											</div>
-										</section>
-										<section className={`${styles.links} ${styles.round}`}>
-											<div className={`${styles.card} ${styles.cardBlue}`}>
-												<div className={`${styles.cardHeader}`}>
-													<div className={`${styles.name} `}>
-														<span>Полезные ссылки</span>
+											</section>
+										</div>
+
+										<div className={`${styles.right}`}>
+											<section className={`${styles.links} ${styles.round}`}>
+												<div className={`${styles.card} ${styles.cardBlue}`}>
+													<div className={`${styles.cardHeader}`}>
+														<div className={`${styles.name} `}>
+															<span>Полезные ссылки</span>
+														</div>
+													</div>
+													<div className={`${styles.cardBody}`}>
+														<a
+															href={`https://vernycapital.sharepoint.com/Lists/OutOf/AllItems.aspx?FilterField1=login&FilterValue1=${this.props.login}&useFiltersInViewXml=1&FilterField2=Type&FilterValue2=%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0&FilterType2=Choice&FilterOp2=In`}
+															target='_blank'
+															className={`${styles.link}`}
+														>
+															<button type='button' className={`${styles.btn} ${styles.btnLightBlue}`}>
+																<Icon iconName='Arrivals' className={`${styles.btnIcon}`}></Icon>
+																Посмотреть список командировок
+															</button>
+														</a>
+														<a
+															href='https://bpm.vernycapital.com/itsm/itsm_form?uid=5a1d9e58-11b5-43b4-ad9f-f1257505b179'
+															target='_blank'
+															className={`${styles.link}`}
+														>
+															<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
+																<Icon iconName='ActivateOrders' className={`${styles.btnIcon}`}></Icon>
+																Подать заявку на командировку
+															</button>
+														</a>
 													</div>
 												</div>
-												<div className={`${styles.cardBody}`}>
-													<a
-														href='https://vernycapital.sharepoint.com/Lists/OutOf/AllItems.aspx'
-														target='_blank'
-														className={`${styles.link}`}
-													>
-														<button type='button' className={`${styles.btn} ${styles.btnLightBlue}`}>
-															<Icon iconName='Arrivals' className={`${styles.btnIcon}`}></Icon>
-															Посмотреть список
-														</button>
-													</a>
-													<a href='#' target='_blank' className={`${styles.link}`}>
-														<button type='button' className={`${styles.btn} ${styles.btnDark}`}>
-															<Icon iconName='ActivateOrders' className={`${styles.btnIcon}`}></Icon>
-															Подать заявку
-														</button>
-													</a>
-												</div>
-											</div>
-										</section>
+											</section>
+										</div>
 									</div>
 								</div>
 							</PivotItem>
@@ -422,37 +444,36 @@ export default class PersonalArea extends React.Component<IPersonalAreaProps, IP
 			const sp = spfi(this._sp);
 
 			// TODO: CamlQuery для получения списка отпусков пользователя
-			// const camlVacations: ICamlQuery = {
-			// 	ViewXml: "<View><ViewFields><FieldRef Name='Title' /></ViewFields><RowLimit>5</RowLimit></View>",
-			// };
-			// const itemCamlVacations: object = await sp.web.lists.getByTitle('Нет в офисе').getItemsByCAMLQuery(caml);
+			const camlVacations: ICamlQuery = {
+				ViewXml: `<Query>
+					<Where>
+						<And>
+							<Eq>
+								<FieldRef Name='login' />
+								<Value type='text'>${this.props.login}</Value>
+							</Eq>
+							<And>
+								<Eq>
+									<FieldRef Name='Type' />
+									<Value Type='Choice'>Отпуск</Value>
+								</Eq>
+								<Gt>
+									<FieldRef Name='Created' />
+									<Value IncludeTimeValue='FALSE' Type='DateTime'>2022-01-01T14:20:17Z</Value>
+								</Gt>
+							</And>
+						</And>
+					</Where>
+					<RowLimit>10</RowLimit>
+				</Query>`,
+			};
 
-			// get list items array
-			const itemsVacations: any[] = await sp.web.lists
-				.getByTitle('Нет в офисе')
-				.items.select('Title', 'From', 'To', 'login', 'Type', 'OrderID', 'Commnet')
-				.filter(`login eq 'asmyshlyayev@vernycapital.com'`)();
-			// .filter(`substringof('asmyshlyayev@vernycapital.com',Title) and substringof('Командировка',Type)`)();
+			const itemsCamlVacations: any[] = await sp.web.lists.getByTitle('Нет в офисе').getItemsByCAMLQuery(camlVacations);
 
-			console.log(itemsVacations);
-
-			// суммирует дни отпуска
-			const _vacationDays = itemsVacations
-				.map((item, i) => {
-					const diffInTime = Date.parse(item.To) - Date.parse(item.From);
-					// console.log(diffInTime);
-
-					const diffInDays = diffInTime / (1000 * 3600 * 24);
-					console.log(diffInDays);
-
-					return diffInDays;
-				})
-				.reduce((prev, curr, i) => prev + curr);
-
-			console.log(_vacationDays);
+			console.log(camlVacations);
 
 			// создает массив отпусков для вывода
-			const vacationList = itemsVacations.map((item) => {
+			const vacationList = itemsCamlVacations.map((item) => {
 				const _from = new Date(item.From);
 				const _to = new Date(item.To);
 				const currentObj = {
@@ -467,8 +488,8 @@ export default class PersonalArea extends React.Component<IPersonalAreaProps, IP
 
 			// обновление state
 			const _vacation = {
-				vacationDays: _vacationDays,
-				title: itemsVacations[0].Title,
+				// vacationDays: _vacationDays,
+				title: itemsCamlVacations[0]?.Title,
 				list: vacationList,
 			};
 
@@ -486,35 +507,37 @@ export default class PersonalArea extends React.Component<IPersonalAreaProps, IP
 			const sp = spfi(this._sp);
 
 			// TODO: CamlQuery для получения списка командировок пользователя
-			// const camlVacations: ICamlQuery = {
-			// 	ViewXml: "<View><ViewFields><FieldRef Name='Title' /></ViewFields><RowLimit>5</RowLimit></View>",
-			// };
-			// const itemCamlVacations: object = await sp.web.lists.getByTitle('Нет в офисе').getItemsByCAMLQuery(caml);
+			const camlErrands: ICamlQuery = {
+				ViewXml: `<Query>
+				<Where>
+					<And>
+						<Eq>
+							<FieldRef Name='login' />
+							<Value type='text'>${this.props.login}</Value>
+						</Eq>
+						<And>
+							<Eq>
+								<FieldRef Name='Type' />
+								<Value Type='Choice'>Командировка</Value>
+							</Eq>
+							<Gt>
+								<FieldRef Name='Created' />
+								<Value IncludeTimeValue='FALSE' Type='DateTime'>2022-01-01T14:20:17Z</Value>
+							</Gt>
+						</And>
+					</And>
+				</Where>
+				<RowLimit>10</RowLimit>
+			</Query>`,
+			};
 
-			// get list items
-			const itemsErrands: any[] = await sp.web.lists
-				.getByTitle('Нет в офисе')
-				.items.select('Title', 'From', 'To', 'login', 'Type', 'OrderID', 'Commnet')
-				.filter(`login eq 'asmyshlyayev@vernycapital.com'`)();
-			// .filter(`substringof('asmyshlyayev@vernycapital.com',Title) and substringof('Командировка',Type)`)();
+			const itemsCamlErrands: any[] = await sp.web.lists.getByTitle('Нет в офисе').getItemsByCAMLQuery(camlErrands);
 
-			console.log(itemsErrands);
+			console.log(itemsCamlErrands);
 
-			const _errandDays = itemsErrands
-				.map((item, i) => {
-					const diffInTime = Date.parse(item.To) - Date.parse(item.From);
-					// console.log(diffInTime);
+			const _errandDays = itemsCamlErrands.length;
 
-					const diffInDays = diffInTime / (1000 * 3600 * 24);
-					console.log(diffInDays);
-
-					return diffInDays;
-				})
-				.reduce((prev, curr, i) => prev + curr);
-
-			console.log(_errandDays);
-
-			const vacationList = itemsErrands.map((item) => {
+			const vacationList = itemsCamlErrands.map((item) => {
 				const _from = new Date(item.From);
 				const _to = new Date(item.To);
 				const currentObj = {
@@ -529,7 +552,7 @@ export default class PersonalArea extends React.Component<IPersonalAreaProps, IP
 
 			const _errand = {
 				errandDays: _errandDays,
-				title: itemsErrands[0].Title,
+				title: itemsCamlErrands[0]?.Title,
 				list: vacationList,
 			};
 

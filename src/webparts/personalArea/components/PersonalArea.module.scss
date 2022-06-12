@@ -22,11 +22,10 @@
 	}
 
 	.tabContentWrapper {
-		max-height: 750px;
 		display: flex;
 		flex-wrap: wrap;
-		flex-direction: column;
-		align-content: space-between;
+		flex-direction: row;
+		justify-content: space-between;
 		padding-top: 1rem;
 		background-color: #fff;
 	}
@@ -88,6 +87,11 @@
 		margin-bottom: 80px;
 	}
 
+	.left,
+	.right {
+		width: 48%;
+	}
+
 	//////////////// Info Tab ////////////////
 	// General Info Section
 
@@ -95,7 +99,7 @@
 	.details,
 	.links,
 	.hr {
-		width: 48%;
+		width: 100%;
 	}
 
 	.card {

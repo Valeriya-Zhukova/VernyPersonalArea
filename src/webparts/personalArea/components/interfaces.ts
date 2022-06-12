@@ -15,7 +15,7 @@ export interface ILogin {
 }
 
 export interface IVacation {
-	vacationDays: number | null;
+	// vacationDays: number | null;
 	title: string | null;
 	list: any[] | null;
 }
