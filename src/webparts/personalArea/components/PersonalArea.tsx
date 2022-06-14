@@ -445,27 +445,28 @@ export default class PersonalArea extends React.Component<IPersonalAreaProps, IP
 
 			// TODO: CamlQuery для получения списка отпусков пользователя
 			const camlVacations: ICamlQuery = {
-				ViewXml: `<Query>
+				ViewXml: `<View>
+				<Query>
 					<Where>
 						<And>
 							<Eq>
-								<FieldRef Name='login' />
-								<Value type='text'>${this.props.login}</Value>
+								<FieldRef Name='Title' />
+								<Value Type='Text'>asmyshlyayev@vernycapital.com</Value>
 							</Eq>
 							<And>
+								<Gt>
+									<FieldRef Name='From' />
+									<Value IncludeTimeValue='TRUE' Type='DateTime'>2022-01-01T13:40:32Z</Value>
+								</Gt>
 								<Eq>
 									<FieldRef Name='Type' />
 									<Value Type='Choice'>Отпуск</Value>
 								</Eq>
-								<Gt>
-									<FieldRef Name='Created' />
-									<Value IncludeTimeValue='FALSE' Type='DateTime'>2022-01-01T14:20:17Z</Value>
-								</Gt>
 							</And>
 						</And>
 					</Where>
-					<RowLimit>10</RowLimit>
-				</Query>`,
+				</Query>
+			</View>`,
 			};
 
 			const itemsCamlVacations: any[] = await sp.web.lists.getByTitle('Нет в офисе').getItemsByCAMLQuery(camlVacations);
@@ -508,27 +509,28 @@ export default class PersonalArea extends React.Component<IPersonalAreaProps, IP
 
 			// TODO: CamlQuery для получения списка командировок пользователя
 			const camlErrands: ICamlQuery = {
-				ViewXml: `<Query>
-				<Where>
-					<And>
-						<Eq>
-							<FieldRef Name='login' />
-							<Value type='text'>${this.props.login}</Value>
-						</Eq>
+				ViewXml: `<View>
+				<Query>
+					<Where>
 						<And>
 							<Eq>
-								<FieldRef Name='Type' />
-								<Value Type='Choice'>Командировка</Value>
+								<FieldRef Name='login' />
+								<Value type='text'>asmyshlyayev@vernycapital.com</Value>
 							</Eq>
-							<Gt>
-								<FieldRef Name='Created' />
-								<Value IncludeTimeValue='FALSE' Type='DateTime'>2022-01-01T14:20:17Z</Value>
-							</Gt>
+							<And>
+								<Gt>
+									<FieldRef Name='From' />
+									<Value IncludeTimeValue='TRUE' Type='DateTime'>2022-01-01T13:40:32Z</Value>
+								</Gt>
+								<Eq>
+									<FieldRef Name='Type' />
+									<Value Type='Choice'>Отпуск</Value>
+								</Eq>
+							</And>
 						</And>
-					</And>
-				</Where>
-				<RowLimit>10</RowLimit>
-			</Query>`,
+					</Where>
+				</Query>
+			</View>`,
 			};
 
 			const itemsCamlErrands: any[] = await sp.web.lists.getByTitle('Нет в офисе').getItemsByCAMLQuery(camlErrands);
